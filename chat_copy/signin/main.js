@@ -28,13 +28,14 @@ form_.onsubmit = (e) => {
         // Signed in
         var user = userCredential.user;
         console.log(user);
-        if (user.emailVerified) {
-          sweetAlert("success", "Welcome back");
+        open("../updateAccount.html", "_self");
+        // if (user.emailVerified) {
+        //   sweetAlert("success", "Welcome back");
 
-          open("../updateAccount.html", "_self");
-        } else {
-          sweetAlert("error", "Please verify your email");
-        }
+        //   open("../updateAccount.html", "_self");
+        // } else {
+        //   sweetAlert("error", "Please verify your email");
+        // }
       })
       .catch((error) => {
         var errorMessage = error.message;

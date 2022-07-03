@@ -20,17 +20,22 @@
         <div class="left col-12 col-md-6 col-xl-4">
           <div class="header d-flex justify-content-between align-items-center">
             <div class="avatar">
-              <img id="userImg" src="https://picsum.photos/300" alt="" />
-              <span id="userName">Hanhnhi Tran</span>
+              <img id="currentUserAva" src="" alt="Loading..." />
+              <span id="currentName">...</span>
             </div>
             <div class="func">
+              <i
+                class="fa-solid fa-plus fa-2x"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              ></i>
               <i
                 onclick="signOut()"
                 class="fa-solid fa-right-from-bracket fa-2x"
               ></i>
               <a href="./updateAccount.html">
-                <i class="fa-solid fa-pen-to-square fa-2x"></i>
-              </a>
+                <i class="fa-solid fa-pen-to-square fa-2x"></i
+              ></a>
             </div>
           </div>
           <div class="search d-flex align-items-center">
@@ -53,12 +58,12 @@
             </div>
             <div class="dark_mode_setting">
               <label class="switch">
-                <input id="sw_mode" type="checkbox" />
+                <input id="sw_mode" type="checkbox" />+-
                 <span class="slider"></span>
               </label>
             </div>
             <div class="time">
-              <p id="realTime">Wed 19:30:00</p>
+              <p>Wed 19:30:00</p>
             </div>
           </div>
           <div class="chat_body">
@@ -67,11 +72,47 @@
             </div>
             <hr />
             <div class="chat_input">
-              <form action="" id="chat_input_form">
-                <input name="chat" type="text" placeholder="Nhập tin nhắn" />
-                <i class="fa-solid fa-paper-plane"></i>
+              <form id="chat_input_form">
+                <input type="text" name="chat" placeholder="Nhập tin nhắn" />
+                <button type="submit">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
               </form>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">...</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
@@ -87,12 +128,10 @@
       src="https://kit.fontawesome.com/18d5300895.js"
       crossorigin="anonymous"
     ></script>
-
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
-
     <script>
       const firebaseConfig = {
         apiKey: "AIzaSyAgBpIUZj7vEAjTKkbxx4XJRVjCmYa1L7E",

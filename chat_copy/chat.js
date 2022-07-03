@@ -3,28 +3,33 @@ document.querySelector("#sw_mode").addEventListener("click", function () {
   document.body.classList.toggle("dark_mode");
 });
 
-var email_ = "";
-var currentid_ = "";
-var img_ = "";
+var email_ = ""
+var currentid_ = ""
+var img_ = ""
 
 // check xem sự thay đổi của user đã được lưu trong firebase hay chưa
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     var uid = user.uid;
-    console.log(user.email);
+
+
     email_ = user.email;
-    img_ = user.photoURL;
-    loadchat(user.email);
+    img_ = user.photoURL
     renderCurrentUser(user.photoURL, user.displayName);
-    console.log(user);
+
+    loadchat(user.email);
+    setUpConversationchange(email_)
     // ...
   } else {
-    sweetAlert("warning", "bạn cần đăng nhập");
-    setTimeout(() => {
-      open("./signin/index.html", "_self");
-    }, 3000);
+    alert("Bạn chưa đăng nhập");
+    open("./signin/index.html", "_self");
   }
 });
+
+let renderCurrentUser = (photo, userName) => {
+  document.querySelector("#currentUserAva").src = photo;
+  document.querySelector("#currentName").innerHTML = userName;
+};
 
 let signOut = () => {
   firebase
@@ -38,47 +43,16 @@ let signOut = () => {
     });
 };
 
-let clock = () => {
-  let date = new Date();
-  let h = date.getHours();
-  let m = date.getMinutes();
-  let s = date.getSeconds();
-  let d = date.getDay();
-
-  if (m < 10) {
-    m = "0" + m;
-  }
-  if (h < 10) {
-    h = "0" + h;
-  }
-  if (s < 10) {
-    s = "0" + s;
-  }
-  var weekday = new Array(7);
-  weekday[0] = "Sunday";
-  weekday[1] = "Monday";
-  weekday[2] = "Tuesday";
-  weekday[3] = "Wednesday";
-  weekday[4] = "Thursday";
-  weekday[5] = "Friday";
-  weekday[6] = "Saturday";
-
-  var n = weekday[d];
-
-  return ` ${h}:${m}:${s}     ${n}`;
-};
-
 let loadchat = async (email) => {
   let result = await firebase
     .firestore()
     .collection("chat")
     .where("users", "array-contains", email)
     .get();
-  console.log(result);
 
   let data = getDataFromDocs(result.docs);
   console.log(data);
-  renderUserList(data);
+  renderUserList(data, email);
   renderChat(data[0], email);
 };
 
@@ -97,38 +71,20 @@ let getDataFromDocs = (docs) => {
   return result;
 };
 
-let sweetAlert = (icon, message) => {
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener("mouseenter", Swal.stopTimer);
-      toast.addEventListener("mouseleave", Swal.resumeTimer);
-    },
-  });
-
-  Toast.fire({
-    icon: icon,
-    title: message,
-  });
-};
-
 let renderChat = (data, ownerEmail) => {
   let chat = data.chat;
   currentid_ = data.id;
   let dom = document.querySelector(".chat");
+  document.querySelector("#currentUserImg").src = data.avatar;
+  document.querySelector("#currentUserName").innerHTML = data.name;
   dom.innerHTML = "";
 
   for (let i = 0; i < chat.length; i++) {
-    console.log(chat[i].email);
     let html = `<div class="mess  ${
       chat[i].email == ownerEmail ? "owner" : ""
     }">
     <div class="mess-avatar">
-      <img src="${chat[i].avatar}" alt="" />
+      <img src="${chat[i].img}" alt="" />
     </div>
     <div class="mess-content">
       <p>${chat[i].email}</p>
@@ -140,6 +96,9 @@ let renderChat = (data, ownerEmail) => {
   </div>`;
     dom.innerHTML += html;
   }
+
+  let chat_scroll = document.querySelector(".chat")
+  chat_scroll.scrollTop = chat_scroll.scrollHeight
 };
 
 let renderUserList = (data, email) => {
@@ -171,13 +130,41 @@ let renderUserList = (data, email) => {
   }
 };
 
-let renderCurrentUser = (photo, userName) => {
-  document.querySelector("#userImg").src = photo;
-  document.querySelector("#userName").innerHTML = userName;
+
+
+
+let clock = () => {
+  let date = new Date();
+  let h = date.getHours();
+  let m = date.getMinutes();
+  let s = date.getSeconds();
+  let d = date.getDay();
+
+  if (m < 10) {
+    m = "0" + m;
+  }
+  if (h < 10) {
+    h = "0" + h;
+  }
+  if (s < 10) {
+    s = "0" + s;
+  }
+  var weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+
+  var n = weekday[d];
+
+  return `${h}:${m}:${s}     ${n}`;
 };
 
 setInterval(() => {
-  document.querySelector("#realTime").innerHTML = clock();
+  document.querySelector(".time p").innerHTML = clock();
 }, 1000);
 
 let formChat = document.querySelector("#chat_input_form");
@@ -186,7 +173,8 @@ formChat.onsubmit = (e) => {
 
   let content = formChat.chat.value.trim();
 
-  updateNewMessage(content, email_, img_, clock(), currentid_);
+  updateNewMessage(content, email_,img_, clock(), currentid_);
+  formChat.chat.value = ""
 };
 
 let updateNewMessage = async (content, email, img, time, currentID) => {
@@ -208,16 +196,36 @@ let updateNewMessage = async (content, email, img, time, currentID) => {
   }
 };
 
-// let loadConversation1 = async (email)=>{
-//     var currentEmail = email.trim()
-//     document.querySelector("#currentEmail").innerHTML = currentEmail
-//     let result = await firebase.firestore()
-//     .collection('chat')
-//     .where('users','array-contains',currentEmail)
-//     .get()
 
-//     let Conversations = getDataFromDocs(result.docs)
-//     console.log(Conversations)
-//     renderChat(Conversations[0], currentEmail)
-//     rederListFriends(Conversations, currentEmail)
-// }
+
+let setUpConversationchange =  async (email) => {
+  let skipRun = true
+  let currentEmail = email
+  firebase.firestore()
+  .collection('chat')
+  .where('users', 'array-contains', currentEmail)
+  .onSnapshot(function (snapshot) {
+      if (skipRun) {
+          skipRun = false
+          return
+      }
+
+      let docChanges = snapshot.docChanges()
+      for (let docChange of docChanges) {
+          let type = docChange.type
+          let conversationDoc = docChange.doc
+          let data = getDataFromDoc(conversationDoc)
+
+          if (type == 'modified') {
+            renderChat(data, email_)
+          }
+          if(type == 'added'){
+              
+          }
+      }
+  })
+}
+
+let addConversation = async (data)=>{
+  await firebase.firestore().collection('chat'.add(data))
+}
