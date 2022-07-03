@@ -3,20 +3,19 @@ document.querySelector("#sw_mode").addEventListener("click", function () {
   document.body.classList.toggle("dark_mode");
 });
 
-
-var email_ = ""
-var currentid_ = ""
-var img_ = ""
+var email_ = "";
+var currentid_ = "";
+var img_ = "";
 
 // check xem sự thay đổi của user đã được lưu trong firebase hay chưa
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     var uid = user.uid;
     console.log(user.email);
-    email_ = user.email
-    img_ = user.photoURL
+    email_ = user.email;
+    img_ = user.photoURL;
     loadchat(user.email);
-    renderCurrentUser(user.photoURL, user.displayName)
+    renderCurrentUser(user.photoURL, user.displayName);
     console.log(user);
     // ...
   } else {
@@ -69,7 +68,6 @@ let clock = () => {
   return ` ${h}:${m}:${s}     ${n}`;
 };
 
-
 let loadchat = async (email) => {
   let result = await firebase
     .firestore()
@@ -80,7 +78,7 @@ let loadchat = async (email) => {
 
   let data = getDataFromDocs(result.docs);
   console.log(data);
-  renderUserList(data)
+  renderUserList(data);
   renderChat(data[0], email);
 };
 
@@ -98,7 +96,6 @@ let getDataFromDocs = (docs) => {
   }
   return result;
 };
-
 
 let sweetAlert = (icon, message) => {
   const Toast = Swal.mixin({
@@ -121,16 +118,17 @@ let sweetAlert = (icon, message) => {
 
 let renderChat = (data, ownerEmail) => {
   let chat = data.chat;
-  currentid_ = data.id
+  currentid_ = data.id;
   let dom = document.querySelector(".chat");
   dom.innerHTML = "";
 
   for (let i = 0; i < chat.length; i++) {
+    console.log(chat[i].email);
     let html = `<div class="mess  ${
       chat[i].email == ownerEmail ? "owner" : ""
     }">
     <div class="mess-avatar">
-      <img src="${chat[i].img}" alt="" />
+      <img src="${chat[i].avatar}" alt="" />
     </div>
     <div class="mess-content">
       <p>${chat[i].email}</p>
@@ -144,12 +142,12 @@ let renderChat = (data, ownerEmail) => {
   }
 };
 
-let renderUserList = (data) => {
+let renderUserList = (data, email) => {
   let dom = document.querySelector(".card-body");
-  dom.innerHTML = ""
+  dom.innerHTML = "";
 
   for (let i = 0; i < data.length; i++) {
-    let html = `<div class="item d-flex align-items-center">
+    let html = `<div id="c${data[i].id}" class="item d-flex align-items-center">
     <div class="image">
       <img
         src="${data[i].avatar}"
@@ -174,9 +172,9 @@ let renderUserList = (data) => {
 };
 
 let renderCurrentUser = (photo, userName) => {
-  document.querySelector("#userImg").src = photo
-  document.querySelector("#userName").innerHTML = userName
-}
+  document.querySelector("#userImg").src = photo;
+  document.querySelector("#userName").innerHTML = userName;
+};
 
 setInterval(() => {
   document.querySelector("#realTime").innerHTML = clock();
@@ -188,7 +186,7 @@ formChat.onsubmit = (e) => {
 
   let content = formChat.chat.value.trim();
 
-  updateNewMessage(content, email_, img_, clock(), currentid_)
+  updateNewMessage(content, email_, img_, clock(), currentid_);
 };
 
 let updateNewMessage = async (content, email, img, time, currentID) => {
