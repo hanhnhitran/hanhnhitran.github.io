@@ -226,6 +226,37 @@ let setUpConversationchange =  async (email) => {
   })
 }
 
+document.querySelector("#addConversation_btn").addEventListener("click", () => {
+  console.log("alo");
+  let chatName = document.querySelector("#addConversation_Name").value;
+  let users = document.querySelector("#addConversation_Users").value;
+  let listUsers = users.trim().split(" ");
+  if (email_) {
+    listUsers.push(email_);
+  }
+  let photo = document.querySelector("#addConversation_Photo").files[0];
+
+  const ref = firebase.storage().ref();
+  const metadata = {
+    contentType: photo.type,
+  };
+  const name = photo.name;
+
+  const Upload = ref.child(name).put(photo, metadata);
+  Upload.then((snapshot) => snapshot.ref.getDownloadURL()).then((url) => {
+    let data = {
+      avatar: url,
+      chat: [],
+      name: chatName,
+      timeStart: clock(),
+      users: listUsers,
+    };
+    addConversation(data);
+  });
+});
+
+
 let addConversation = async (data)=>{
-  await firebase.firestore().collection('chat'.add(data))
+  await firebase.firestore().collection("chat").add(data);
+    alert("successfully")
 }

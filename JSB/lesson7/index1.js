@@ -16,7 +16,7 @@ printTriangle(15)
 
 
 //bai2
-let myArray = [9,7,9,0,7,8,378,123,546]
+let myArray = [9,7,9,4,7,8,20,18,15,0]
 
 for (i = 0; i < myArray.length; i++) {
     if (myArray[i]%2==0 && myArray[i]==0) {
