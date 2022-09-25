@@ -792,3 +792,63 @@ int main(){
     freopen("bai1.inp", "r", stdin)
     freopen("bai1.out", "w", stdout)    
 }
+
+
+
+int Fibonacci(int n)({
+    if(n == 1 || n == 2)
+    return 1;
+    return Fibonacci(n-1) + Fibonacci(n-2);
+})
+int main(){
+    int n;
+    cout << "enter n :";
+    cin >> n;
+
+    cout << "num Fibonacci" << n << "is" << Fibonacci();
+    return 0;
+}
+
+
+
+int main(){
+    int n;
+    cout << "\enter n ="
+    cin >> n;
+    if(n <  2){
+        cout << n << " kphai so NT";
+        return 0;
+    }
+    int count = 0;
+    for(int i = 2; i <= sqrt(n); i ++){
+        if(n % 1 == 0){
+            count ++;
+        }
+    }
+    if(count == 0){
+        cout << n << "la so NT";
+    }else{
+        cout << n << "kphai so NT"
+    }
+}
+
+
+
+char hoten[30];
+char ngaysinh[9];
+
+char s[10] = {'T', 'H', 'C ', 'S', '', 'A'};
+char s[10] = "THCS A";
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    char arCh[50];
+    cout << "input character sequences;";
+    cin >> arCh;
+    cout << " Character sequences recieved";
+    cout << arCh;
+    system("pause");   
+}
+
