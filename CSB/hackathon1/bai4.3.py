@@ -20,7 +20,7 @@ while True:
   else:
     print('Invalid password. ', end='')
 
-email = none
+# email = none
 while True:
     print('\emial:', end = '')
     email = input()
@@ -31,3 +31,4 @@ while True:
         print('invalid email', end = '')
 
 print('\n registered succesfully')
+

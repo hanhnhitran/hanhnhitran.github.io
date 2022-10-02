@@ -1,295 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./list.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
-    <link href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./list.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css"
+    />
+    <link
+      href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="nav-wrapper">
-        <div class="container">
-            <div class="nav">
-                <a href="#" class="logo">
-                    <i class='bx bx-camera-movie' main-color></i>Mo<span class="main-color">vi</span>e
-                </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="./index.html">HOME</a></li>
-                    <li><a href="#">GENRE</a></li>
-                    <li><a href="#">MOVIES</a></li>
-                    <li><a href="#">SERIES</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li>
-                        <a href="/finalProject/login.html" class="btn btn-hover">
-                            <span>Sign in</span>
-                        </a>
-                    </li>
-                </ul>
-                        <form id="a">
-            <input placeholder="enter" name="filmName" type="text">
+      <div class="container">
+        <div class="nav">
+          <a href="#" class="logo">
+            <i class="bx bx-camera-movie" main-color></i>Mo<span
+              class="main-color"
+              >vi</span
+            >e
+          </a>
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="./index.html">HOME</a></li>
+            <li><a href="#">GENRE</a></li>
+            <li><a href="#">MOVIES</a></li>
+            <li><a href="#">SERIES</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li>
+              <a href="/JSB/finalProject/genre.html" class="btn btn-hover">
+                <span>Sign in</span>
+              </a>
+            </li>
+          </ul>
+          <form id="a">
+            <input placeholder="enter" name="filmName" type="text" />
             <button type="submit">Search</button>
-        </form> 
-              
-            </div>
+          </form>
         </div>
+      </div>
     </div>
     <div class="container_result_search">
-        <div class="genre-details">
-            <span>Result</span>
-        </div>
-        <div id="xx" class="container">
-            <lottie-player src="https://assets4.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"  background="transparent"  speed="1"  style="width: 100px; height: 100px;"  loop  autoplay></lottie-player>
-        </div>
+      <div class="genre-details">
+        <span>Result</span>
+      </div>
+      <div id="xx" class="container">
+        <lottie-player
+          src="https://assets4.lottiefiles.com/datafiles/bEYvzB8QfV3EM9a/data.json"
+          background="transparent"
+          speed="1"
+          style="width: 100px; height: 100px"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
     </div>
     <div class="genre-details">
-        <span>Emotional Korean TV Dramas</span> 
+      <span>Emotional Korean TV Dramas</span>
+    </div>
+    <div class="container">
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://kobis.or.kr/common/mast/movie/2018/10/3a4267d7bce04106b996ad93e65a57d1.jpg"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://newsmd1fr.keeng.net/tiin/archive/images/20201030/115331_61zajvmda1l_sl1101_.jpg"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/2/26/Mine_TV_series.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=mine&jbv=81403973"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://dep.com.vn/wp-content/uploads/2021/06/banner-truong-luat-law-school-2021.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=law%20s&jbv=81413647"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1374/2665/products/800x0.png?v=1616656958"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=penthouse&jbv=81197832"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/vi/archive/1/10/20210302064452%21What%27s_Wrong_with_Secretary_Kim.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=what&jbv=81030241"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://1.bp.blogspot.com/-cWSNOWo5Tc0/XZYjn7tk5OI/AAAAAAAAKKo/NvjLyO8d73EulDCEC3GJE4fqqTBwLyJvACKgBGAsYHg/s640/Phim%2BBo%2BKhach%2BSan%2BBi%2BAn%2B-%2BHotel%2BDel%2BLuna%2B%25282019%2529.jpg"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1"
+                >Watch now</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://cf.creatrip.com/original/blog/9561/37y4045v23fk9lywbbp38kgv0wb8qaw2.png?f=webp&q=80&d=500"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283"
+                >Watch now</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://bloganchoi.com/wp-content/uploads/2020/08/phim-han-quoc-thang9-lies-of-lies.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=mine&jbv=81403973"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://cdn.popsww.com/blog/sites/2/2021/04/hoa-cua-quy.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=law%20s&jbv=81413647"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://kenh14cdn.com/thumb_w/660/2019/6/3/photo-1-15595458813761602191313.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=penthouse&jbv=81197832"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_680/v1595990142/blog/fkrkamvltryefo617kki.png"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=what&jbv=81030241"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://media-cdn.laodong.vn/Storage/NewsPortal/2020/5/4/802994/Phim-Han-Quoc.png"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_680/v1595990170/blog/b5mubmgrqcngk1mt4mzh.jpg"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://129plq2lsfep3lebyi4c70o5-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/Korean-Drama_Fated-to-Love-You-225x300.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=mine&jbv=81403973"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://korea.com.vn/wp-content/uploads/2017/12/46-7.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=law%20s&jbv=81413647"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://hanquocchotoinhe.b-cdn.net/wp-content/uploads/2021/06/phim-kinh-di-han-quoc-02.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=penthouse&jbv=81197832"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://photo-cms-kienthuc.zadn.vn/zoom/800/uploaded/trucchinh2/2017_11_21/son21-11/newfolder2/nhung-bo-phim-an-tuong-ve-dao-chich-cua-han-quoc-hinh-2.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=what&jbv=81030241"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iUPkc-lzhthbtnus20mfg-mYaa0hVQbzGg&usqp=CAU"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://hanquocchotoinhe.b-cdn.net/wp-content/uploads/2021/06/phim-han-quoc-hay-09.jpg"
+              alt=""
+            />
+            <button>
+              <a
+                href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img src="https://kenh14cdn.com/2017/1-1509341275172.jpg" alt="" />
+            <button>
+              <a href="https://www.netflix.com/search?q=mine&jbv=81403973"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://duhocsunny.edu.vn/wp-content/uploads/2021/04/nhung-cau-noi-hay-trong-phim-han-quoc-3.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=law%20s&jbv=81413647"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://i.pinimg.com/474x/7c/10/5f/7c105febd834141e69b36e1b58aba2a7.jpg"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=penthouse&jbv=81197832"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="movie-list">
+        <div class="movie-list-wrapper">
+          <div class="movie-list-item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzYygVSQcUGN7cOA2h071F_DEUS2JwQK5M1Q&usqp=CAU"
+              alt=""
+            />
+            <button>
+              <a href="https://www.netflix.com/search?q=what&jbv=81030241"
+                >Watch</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </div>
-    <div class="container">
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://kobis.or.kr/common/mast/movie/2018/10/3a4267d7bce04106b996ad93e65a57d1.jpg" alt="">
-                    <button><a href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://newsmd1fr.keeng.net/tiin/archive/images/20201030/115331_61zajvmda1l_sl1101_.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/2/26/Mine_TV_series.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=mine&jbv=81403973">Watch</a> </button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://dep.com.vn/wp-content/uploads/2021/06/banner-truong-luat-law-school-2021.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=law%20s&jbv=81413647">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://cdn.shopify.com/s/files/1/1374/2665/products/800x0.png?v=1616656958" alt="">
-                    <button><a href="https://www.netflix.com/search?q=penthouse&jbv=81197832">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/vi/archive/1/10/20210302064452%21What%27s_Wrong_with_Secretary_Kim.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=what&jbv=81030241">Watch</a></button>
-                </div>
-            </div>
-        </div>   
-    </div>
-    <div class="container">
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://1.bp.blogspot.com/-cWSNOWo5Tc0/XZYjn7tk5OI/AAAAAAAAKKo/NvjLyO8d73EulDCEC3GJE4fqqTBwLyJvACKgBGAsYHg/s640/Phim%2BBo%2BKhach%2BSan%2BBi%2BAn%2B-%2BHotel%2BDel%2BLuna%2B%25282019%2529.jpg" alt="">
-                    <button><a href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1">Watch now</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://cf.creatrip.com/original/blog/9561/37y4045v23fk9lywbbp38kgv0wb8qaw2.png?f=webp&q=80&d=500" alt="">
-                    <button><a href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283">Watch now</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://bloganchoi.com/wp-content/uploads/2020/08/phim-han-quoc-thang9-lies-of-lies.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=mine&jbv=81403973">Watch</a> </button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://cdn.popsww.com/blog/sites/2/2021/04/hoa-cua-quy.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=law%20s&jbv=81413647">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://kenh14cdn.com/thumb_w/660/2019/6/3/photo-1-15595458813761602191313.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=penthouse&jbv=81197832">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_680/v1595990142/blog/fkrkamvltryefo617kki.png" alt="">
-                    <button><a href="https://www.netflix.com/search?q=what&jbv=81030241">Watch</a></button>
-                </div>
-            </div>
-        </div>   
-    </div>
-    <div class="container">
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://media-cdn.laodong.vn/Storage/NewsPortal/2020/5/4/802994/Phim-Han-Quoc.png" alt="">
-                    <button><a href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://res.klook.com/image/upload/fl_lossy.progressive,q_85/c_fill,w_680/v1595990170/blog/b5mubmgrqcngk1mt4mzh.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://129plq2lsfep3lebyi4c70o5-wpengine.netdna-ssl.com/wp-content/uploads/2018/07/Korean-Drama_Fated-to-Love-You-225x300.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=mine&jbv=81403973">Watch</a> </button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://korea.com.vn/wp-content/uploads/2017/12/46-7.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=law%20s&jbv=81413647">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://hanquocchotoinhe.b-cdn.net/wp-content/uploads/2021/06/phim-kinh-di-han-quoc-02.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=penthouse&jbv=81197832">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://photo-cms-kienthuc.zadn.vn/zoom/800/uploaded/trucchinh2/2017_11_21/son21-11/newfolder2/nhung-bo-phim-an-tuong-ve-dao-chich-cua-han-quoc-hinh-2.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=what&jbv=81030241">Watch</a></button>
-                </div>
-            </div>
-        </div>   
-    </div>
-    <div class="container">
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9iUPkc-lzhthbtnus20mfg-mYaa0hVQbzGg&usqp=CAU" alt="">
-                    <button><a href="https://www.netflix.com/title/81026705?trackId=13752289&trackIdJaw=13752289&trackIdEpisode=13752289&trackIdTrailer=13752289&dpRightClick=1">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://hanquocchotoinhe.b-cdn.net/wp-content/uploads/2021/06/phim-han-quoc-hay-09.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=the%20king%20&jbv=81260283">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://kenh14cdn.com/2017/1-1509341275172.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=mine&jbv=81403973">Watch</a> </button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://duhocsunny.edu.vn/wp-content/uploads/2021/04/nhung-cau-noi-hay-trong-phim-han-quoc-3.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=law%20s&jbv=81413647">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://i.pinimg.com/474x/7c/10/5f/7c105febd834141e69b36e1b58aba2a7.jpg" alt="">
-                    <button><a href="https://www.netflix.com/search?q=penthouse&jbv=81197832">Watch</a></button>
-                </div>
-            </div>
-        </div>
-        <div class="movie-list">
-            <div class="movie-list-wrapper">
-                <div class="movie-list-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzYygVSQcUGN7cOA2h071F_DEUS2JwQK5M1Q&usqp=CAU" alt="">
-                    <button><a href="https://www.netflix.com/search?q=what&jbv=81030241">Watch</a></button>
-                </div>
-            </div>
-        </div>   
-    </div>
-
-    
-    
     <div class="member-footer">
-        <div class="social-links">
-            <a class="social-link" href=""><i class='bx bxl-facebook-square' ></i></a>
-            <a class="social-link" href=""><i class='bx bxl-instagram' ></i></a>
-            <a class="social-link" href=""><i class='bx bxl-twitter' ></i></a>
-            <a class="social-link" href=""><i class='bx bxl-youtube' ></i></a>
+      <div class="social-links">
+        <a class="social-link" href=""
+          ><i class="bx bxl-facebook-square"></i
+        ></a>
+        <a class="social-link" href=""><i class="bx bxl-instagram"></i></a>
+        <a class="social-link" href=""><i class="bx bxl-twitter"></i></a>
+        <a class="social-link" href=""><i class="bx bxl-youtube"></i></a>
+      </div>
+      <ul class="member-footer-links">
+        <div class="member-footer-link">
+          <li class="member-footer-links-wrapper">Audio and Subtitles</li>
+          <li class="member-footer-links-wrapper">Media Center</li>
+          <li class="member-footer-links-wrapper">Privacy</li>
+          <li class="member-footer-links-wrapper">Contact Us</li>
         </div>
-        <ul class="member-footer-links">
-            <div class="member-footer-link">
-                <li class="member-footer-links-wrapper">Audio and Subtitles</li>
-                <li class="member-footer-links-wrapper">Media Center</li>
-                <li class="member-footer-links-wrapper">Privacy</li>
-                <li class="member-footer-links-wrapper">Contact Us</li>
-            </div>
-            <div class="member-footer-link">
-                <li class="member-footer-links-wrapper">Audio Description</li>
-                <li class="member-footer-links-wrapper">Investor Relations</li>
-                <li class="member-footer-links-wrapper">Legal Notices</li>
-            </div>
-            <div class="member-footer-link">
-                <li class="member-footer-links-wrapper">Help Center</li>
-                <li class="member-footer-links-wrapper">Jobs</li>
-                <li class="member-footer-links-wrapper">Cookie Preferences</li>
-            </div>
-            <div class="member-footer-link">
-                <li class="member-footer-links-wrapper">Gift Cards</li>
-                <li class="member-footer-links-wrapper">Terms of Use</li>
-                <li class="member-footer-links-wrapper">Corporate Information</li>
-            </div>           
-        </ul>
-        <div class="member-footer-service">
-            <button class="service-code">Service Code</button>
+        <div class="member-footer-link">
+          <li class="member-footer-links-wrapper">Audio Description</li>
+          <li class="member-footer-links-wrapper">Investor Relations</li>
+          <li class="member-footer-links-wrapper">Legal Notices</li>
         </div>
+        <div class="member-footer-link">
+          <li class="member-footer-links-wrapper">Help Center</li>
+          <li class="member-footer-links-wrapper">Jobs</li>
+          <li class="member-footer-links-wrapper">Cookie Preferences</li>
+        </div>
+        <div class="member-footer-link">
+          <li class="member-footer-links-wrapper">Gift Cards</li>
+          <li class="member-footer-links-wrapper">Terms of Use</li>
+          <li class="member-footer-links-wrapper">Corporate Information</li>
+        </div>
+      </ul>
+      <div class="member-footer-service">
+        <button class="service-code">Service Code</button>
+      </div>
     </div>
 
     <script src="./list.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-</body>
+  </body>
 </html>
