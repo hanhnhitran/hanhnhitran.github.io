@@ -85,3 +85,8 @@ let sweetAlert = (icon, message) => {
 }
 let setError = (query, content) => {
   document.getElementById(query).innerHTML = content;
+
+
+
+
+

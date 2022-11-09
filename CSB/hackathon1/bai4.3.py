@@ -22,7 +22,7 @@ while True:
 
 # email = none
 while True:
-    print('\emial:', end = '')
+    print('\email:', end = '')
     email = input()
 
     if('.' in email) and ('@' in email):
@@ -31,4 +31,20 @@ while True:
         print('invalid email', end = '')
 
 print('\n registered succesfully')
+
+
+
+print('== Registration ==\n')
+print('username:', end = '')
+password = input()
+while True:
+  print('repeat password:', end = '')
+  if input() == password:
+    break
+  else:
+    print('passwords do not march. Please input again.')
+  print('\nEmail:', end = '')
+  email = input()
+  print('\nRegistered successfully.')
+
 
