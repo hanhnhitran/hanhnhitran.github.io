@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/hanhnhitran/Documents/GitHub/hanhnhitran.github.io/C++",
-      "program": "/Users/hanhnhitran/Documents/GitHub/hanhnhitran.github.io/C++/build/Debug/outDebug"
+      "cwd": "/Users/hanhnhitran/Documents/GitHub/hanhnhitran.github.io/CSA",
+      "program": "/Users/hanhnhitran/Documents/GitHub/hanhnhitran.github.io/CSA/build/Debug/outDebug"
     }
   ]
 }
