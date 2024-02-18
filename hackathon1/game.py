@@ -22,7 +22,7 @@ font_score = pygame.font.SysFont('Bauhaus 93', 30)
 
 
 #define game variables
-tile_size = 30
+tile_size = 50
 game_over = 0
 main_menu = True
 level = 1
