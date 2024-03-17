@@ -6,8 +6,8 @@ public class Project {
         Scanner scanner = new Scanner(System.in);
         boolean running = true;
         while (running) {
-            System.out.print("Input name: ");
-            System.out.print("Input age: ");
+//            System.out.print("Input name: ");
+//            System.out.print("Input age: ");
             System.out.print("Input weight in kilogram: ");
             double weight = scanner.nextDouble();
             System.out.print("Input height in meters: ");
@@ -34,9 +34,34 @@ public class Project {
                 System.out.println("Ensure to eat regular meals and snacks throughout the day to meet your calorie needs.");
                 System.out.println("Consult a nutritionist for a personalized meal plan.");
             }
+            FitnessTracker tracker = new FitnessTracker();
+
+            // Add weights and heights
+            tracker.addWeightHeight(70);
+            tracker.addWeightHeight(170);
+
+            // Add food names and calories
+            tracker.addFoodCalories("Apple", 52);
+            tracker.addFoodCalories("Banana", 89);
+            tracker.addFoodCalories("Orange", 47);
+            tracker.addFoodCalories("Chicken breast", 237);
+            tracker.addFoodCalories("Tofu", 81);
+
+            // Generate meal plan
+            List<String> mealPlan = tracker.generateMealPlan(300);
+
+
+            // Print meal plan
+            System.out.println("Meal Plan:");
+            for (String meal : mealPlan) {
+                System.out.println(meal);
+            }
+
+            System.out.print("Do you want to continue?");
             running = (scanner.next().equals("y"));
         }
     }
+
 
 }
 //
