@@ -5,3 +5,4 @@ function time(time) {
   }
   
 console.log(time(80));
+//abc
