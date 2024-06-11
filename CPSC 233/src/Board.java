@@ -36,7 +36,7 @@ public class Board {
     public static int rowCount(int[][] board){
         return board.length;
     }
-    public static int columnCount(int[][] board){
+    public static int columnCount(int[][] board) {
         return board[0].length;
     }
     public static boolean valid(int[][] board, int x, int y){
